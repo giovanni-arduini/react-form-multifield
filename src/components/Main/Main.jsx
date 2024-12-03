@@ -71,7 +71,7 @@ export default function Main() {
     <main className="page-main">
       <section>
         <div className="container">
-          <form onSubmit={handleSubmit} action="">
+          <form className={style.form} onSubmit={handleSubmit} action="">
             <input
               type="text"
               name="title"
@@ -83,6 +83,7 @@ export default function Main() {
               type="text"
               name="image"
               onChange={handleFormData}
+              placeholder="Inserisci l'URL dell'immagine"
               value={formData.image}
             />
             <ul className={style.tagList}>
@@ -128,6 +129,7 @@ export default function Main() {
             <input
               type="text"
               name="content"
+              placeholder="Inserisci la descrizione del post"
               onChange={handleFormData}
               value={formData.content}
             />
