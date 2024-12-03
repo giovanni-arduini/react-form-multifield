@@ -85,8 +85,10 @@ export default function Main() {
               onChange={handleFormData}
               value={formData.image}
             />
-            <ul className="tagList">
-              <li>
+            <ul className={style.tagList}>
+              <li className={style.tagEl}>
+                {" "}
+                HTML
                 <input
                   type="checkbox"
                   onChange={handleFormData}
@@ -94,7 +96,8 @@ export default function Main() {
                   checked={formData.tags}
                 />
               </li>
-              <li>
+              <li className={style.tagEl}>
+                CSS
                 <input
                   type="checkbox"
                   onChange={handleFormData}
@@ -102,7 +105,8 @@ export default function Main() {
                   checked={formData.tags}
                 />
               </li>
-              <li>
+              <li className={style.tagEl}>
+                PHP
                 <input
                   type="checkbox"
                   onChange={handleFormData}
@@ -110,7 +114,8 @@ export default function Main() {
                   checked={formData.tags}
                 />
               </li>
-              <li>
+              <li className={style.tagEl}>
+                JS
                 <input
                   type="checkbox"
                   onChange={handleFormData}

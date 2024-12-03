@@ -10,14 +10,15 @@ form {
     border: none;
     padding: 0.5rem;
     background-color: aliceblue;
-    min-width: 200px;
   }
 }
 
 .tagList {
   display: flex;
+  gap: 2rem;
+}
 
-  * {
-    width: 20px;
-  }
+.tagEl {
+  display: flex;
+  gap: 0.5rem;
 }
