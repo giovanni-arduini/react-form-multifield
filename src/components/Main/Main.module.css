@@ -1,0 +1,15 @@
+form {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  margin-bottom: 2rem;
+  gap: 1rem;
+
+  * {
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem;
+    background-color: aliceblue;
+    min-width: 200px;
+  }
+}

@@ -1,0 +1,52 @@
+.card {
+  background-color: white;
+  /* max-width: 30rem; */
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center;
+}
+
+.body {
+  padding: 1rem;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.cardTag {
+  display: inline-block;
+  margin-right: 0.2rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 1rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.php {
+  background-color: cornflowerblue;
+  color: black;
+}
+
+.html {
+  background-color: darkorange;
+}
+
+.css {
+  background-color: blue;
+}
+
+.js {
+  background-color: rgb(255, 225, 0);
+  color: black;
+}
+
+.description {
+  margin-bottom: 1rem;
+}

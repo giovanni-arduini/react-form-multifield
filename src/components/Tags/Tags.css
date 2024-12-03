@@ -1,0 +1,25 @@
+.php {
+  background-color: cornflowerblue;
+  color: black;
+}
+
+.html {
+  background-color: darkorange;
+}
+
+.css {
+  background-color: blue;
+}
+
+.js {
+  background-color: rgb(255, 225, 0);
+  color: black;
+}
+
+.cardTag {
+  margin-right: 0.2rem;
+  padding: 0 0.5rem;
+  border-radius: 2rem;
+  color: white;
+  line-height: 2rem;
+}
