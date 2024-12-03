@@ -4,7 +4,7 @@ import style from "./Main.module.css";
 import { useState } from "react";
 
 export default function Main() {
-  console.log("Render Main");
+  // console.log("Render Main");
 
   const [posts, setPosts] = useState(initialPosts);
   const publishedPost = posts.filter((post) => post.published === true);
@@ -18,21 +18,49 @@ export default function Main() {
 
   const [postName, setPostName] = useState("");
 
+  const initialFormData = {
+    title: "",
+    image: "",
+    content: "",
+    tags: [],
+    published: true,
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+
+  function handleFormData(e) {
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+
+    setFormData((formData) => ({
+      ...formData,
+      [e.target.name]: value,
+    }));
+    console.log("change");
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setPosts((newPost) => [...posts, { id: Date.now(), ...formData }]);
+    setFormData(initialFormData);
+    console.log(formData);
+  }
+
   function addPost(e) {
     e.preventDefault();
-    const newPostName = postName.trim();
+    const newPostName = formData.title.trim();
     if (newPostName === "") return;
 
+    const { title, image, content, tags, published } = formData;
     console.log("Aggiungo post!");
 
     const newPost = {
       id: Date.now(),
       title: newPostName,
-      image: undefined,
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.",
-      tags: [],
-      published: true,
+      image: image,
+      content: content,
+      tags: [tags],
+      published: published,
     };
 
     setPosts([...posts, newPost]);
@@ -43,12 +71,60 @@ export default function Main() {
     <main className="page-main">
       <section>
         <div className="container">
-          <form onSubmit={addPost} action=" ">
+          <form onSubmit={handleSubmit} action="">
             <input
               type="text"
-              onChange={(e) => setPostName(e.target.value)}
+              name="title"
+              onChange={handleFormData}
               placeholder="Inserisci il titolo del nuovo post"
-              value={postName}
+              value={formData.title}
+            />
+            <input
+              type="text"
+              name="image"
+              onChange={handleFormData}
+              value={formData.image}
+            />
+            <ul className="tagList">
+              <li>
+                <input
+                  type="checkbox"
+                  onChange={handleFormData}
+                  name="tags"
+                  checked={formData.tags}
+                />
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  onChange={handleFormData}
+                  name="tags"
+                  checked={formData.tags}
+                />
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  onChange={handleFormData}
+                  name="tags"
+                  checked={formData.tags}
+                />
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  onChange={handleFormData}
+                  name="tags"
+                  checked={formData.tags}
+                />
+              </li>
+            </ul>
+
+            <input
+              type="text"
+              name="content"
+              onChange={handleFormData}
+              value={formData.content}
             />
             <input type="submit" value="Aggiungi un nuovo post" />
           </form>

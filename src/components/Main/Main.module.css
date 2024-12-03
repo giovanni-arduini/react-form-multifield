@@ -13,3 +13,11 @@ form {
     min-width: 200px;
   }
 }
+
+.tagList {
+  display: flex;
+
+  * {
+    width: 20px;
+  }
+}
